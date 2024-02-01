@@ -16,8 +16,10 @@ class MyApp extends StatelessWidget {
     return StoreProvider(
         store: store,
         child: MaterialApp(
+          
           debugShowCheckedModeBanner: false,
           theme: ThemeData(
+            scaffoldBackgroundColor: Color(0xffEEF5FF),
             colorScheme:
                 ColorScheme.fromSeed(seedColor: const Color(0xffEEF5FF)),
             useMaterial3: true,

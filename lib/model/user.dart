@@ -18,7 +18,6 @@ class User {
     SharedPreferences localStorage = await SharedPreferences.getInstance();
 
     // todo unregister notifications to null user
-
     localStorage.remove('token');
     localStorage.remove('user');
     localStorage.remove('notifications');
