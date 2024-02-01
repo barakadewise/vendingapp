@@ -32,22 +32,22 @@ class _LoginpageState extends State<Loginpage> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 100,
+                height: 80,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     'assets/img/drop2.png',
-                    width: 50,
-                    height: 50,
+                    width: 80,
+                    height: 80,
                   ),
                 ],
               ),
               const Text(
                 'GROUP 7 VENDINGAPP',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
                     color: Color(0xff176B87)),
               ),
@@ -57,7 +57,7 @@ class _LoginpageState extends State<Loginpage> {
               const Text(
                 'Feel fresh with our water!',
                 style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w400,
                     color: Color(0xff176B87)),
               ),

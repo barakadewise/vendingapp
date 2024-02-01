@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:vendingapp/Home/presentation/home.dart';
+import 'package:vendingapp/auth/presentation/signup.dart';
 import 'package:vendingapp/redux/store.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
                 ColorScheme.fromSeed(seedColor: const Color(0xffEEF5FF)),
             useMaterial3: true,
           ),
-          home: const HomePage(),
+          home: const SignuPage(),
         ));
   }
 }

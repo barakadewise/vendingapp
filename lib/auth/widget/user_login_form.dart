@@ -31,12 +31,12 @@ class RegistrationForm extends StatelessWidget {
                   labelText: 'Username',
                   errorStyle: const TextStyle(
                       fontSize: 10, fontWeight: FontWeight.w400),
-                  floatingLabelStyle: const TextStyle(color: Colors.blueAccent),
+                  floatingLabelStyle: const TextStyle(color: Color(0xff176B87)),
                   labelStyle: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.w300),
                   prefixIcon: const Icon(
                     Icons.email,
-                    color: Colors.blueAccent,
+                    color: Color(0xff176B87),
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
@@ -46,10 +46,10 @@ class RegistrationForm extends StatelessWidget {
                   constraints:
                       const BoxConstraints(maxHeight: 70, minHeight: 50),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Color(0xff176B87)),
                       borderRadius: BorderRadius.circular(15)),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Color(0xff176B87)),
                       borderRadius: BorderRadius.circular(15)),
                 ),
                 validator: (value) {
@@ -72,12 +72,12 @@ class RegistrationForm extends StatelessWidget {
                   labelText: 'Password',
                   errorStyle: const TextStyle(
                       fontSize: 10, fontWeight: FontWeight.w400),
-                  floatingLabelStyle: const TextStyle(color: Colors.blueAccent),
+                  floatingLabelStyle: const TextStyle(color: Color(0xff176B87)),
                   labelStyle: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.w300),
                   prefixIcon: const Icon(
                     Icons.lock_outline_rounded,
-                    color: Colors.blueAccent,
+                    color: Color(0xff176B87),
                   ),
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15)),
@@ -87,10 +87,10 @@ class RegistrationForm extends StatelessWidget {
                   constraints:
                       const BoxConstraints(maxHeight: 70, minHeight: 50),
                   enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Color(0xff176B87)),
                       borderRadius: BorderRadius.circular(15)),
                   focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.grey),
+                      borderSide: const BorderSide(color: Color(0xff176B87)),
                       borderRadius: BorderRadius.circular(15)),
                 ),
                 validator: (value) {
@@ -108,7 +108,7 @@ class RegistrationForm extends StatelessWidget {
                   const Text(
                     'Don\'t have account?',
                     style: TextStyle(
-                      color: Colors.blueAccent,
+                      color: Color(0xff176B87),
                       fontSize: 16,
                       fontWeight: FontWeight.w300,
                     ),
@@ -123,7 +123,7 @@ class RegistrationForm extends StatelessWidget {
                       },
                       child: const Text('Signup',
                           style: TextStyle(
-                              color: Colors.blueAccent,
+                              color: Color(0xff176B87),
                               fontWeight: FontWeight.bold)))
                 ],
               ),
@@ -141,7 +141,7 @@ class RegistrationForm extends StatelessWidget {
                       validatForm(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent),
+                        backgroundColor: Color(0xff176B87)),
                     child: const Text(
                       'Signin',
                       style: TextStyle(

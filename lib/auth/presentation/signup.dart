@@ -29,17 +29,17 @@ class _SignuPageState extends State<SignuPage> {
           child: Column(
             children: [
               const SizedBox(
-                height: 80,
+                height: 50,
               ),
               Image.asset(
                 "assets/img/drop2.png",
-                height: 60,
-                width: 60,
+                height: 80,
+                width: 80,
               ),
               const Text(
                 'GROUP 7 VENDINGAPP',
                 style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 18,
                     fontWeight: FontWeight.w700,
                     color: Color(0xff176B87)),
               ),
@@ -49,10 +49,9 @@ class _SignuPageState extends State<SignuPage> {
                 children: [
                   Text("Feel the diference.",
                       style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w400,
-                        color: Color(0xff176B87)
-                      ))
+                          fontSize: 16,
+                          fontWeight: FontWeight.w400,
+                          color: Color(0xff176B87)))
                 ],
               ),
               const Row(
@@ -61,7 +60,7 @@ class _SignuPageState extends State<SignuPage> {
                   Text('Join for free now',
                       style: TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 18,
+                          fontSize: 16,
                           color: Color(0xff176B87))),
                 ],
               ),

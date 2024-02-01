@@ -10,9 +10,9 @@ class DisplayContainer extends StatelessWidget {
     return Expanded(
         child: Container(
       width: size.width,
-      decoration: const BoxDecoration(
-          color: Color(0xff86B6F6),
-          borderRadius: BorderRadius.only(
+      decoration:  BoxDecoration(
+          color: const Color(0xff176B87).withOpacity(0.8),
+          borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(55), topRight: Radius.circular(55))),
       child: Padding(
         padding: const EdgeInsets.symmetric( horizontal: 15),

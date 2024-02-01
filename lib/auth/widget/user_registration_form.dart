@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vendingapp/auth/presentation/login.dart';
 
-
 class RegistrationForm extends StatelessWidget {
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -28,7 +27,6 @@ class RegistrationForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
-
                 controller: nameController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
@@ -36,12 +34,12 @@ class RegistrationForm extends StatelessWidget {
                     errorStyle: const TextStyle(
                         fontSize: 10, fontWeight: FontWeight.w400),
                     floatingLabelStyle:
-                        const TextStyle(color: Colors.blueAccent),
+                        const TextStyle(color: Color(0xff176B87)),
                     labelStyle: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w300),
                     prefixIcon: const Icon(
                       Icons.person_2_rounded,
-                      color: Colors.blueAccent,
+                      color: Color(0xff176B87),
                     ),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)),
@@ -51,10 +49,10 @@ class RegistrationForm extends StatelessWidget {
                         const BoxConstraints(maxHeight: 70, minHeight: 50),
                     isDense: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value == null || value.isEmpty) {
@@ -80,12 +78,12 @@ class RegistrationForm extends StatelessWidget {
                     errorStyle: const TextStyle(
                         fontSize: 10, fontWeight: FontWeight.w400),
                     floatingLabelStyle:
-                        const TextStyle(color: Colors.blueAccent),
+                        const TextStyle(color: Color(0xff176B87)),
                     labelStyle: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w300),
                     prefixIcon: const Icon(
                       Icons.email,
-                      color: Colors.blueAccent,
+                      color: Color(0xff176B87),
                     ),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)),
@@ -95,10 +93,10 @@ class RegistrationForm extends StatelessWidget {
                         const BoxConstraints(maxHeight: 70, minHeight: 50),
                     isDense: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -114,7 +112,6 @@ class RegistrationForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
-                
                 controller: passwordController,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 decoration: InputDecoration(
@@ -122,12 +119,12 @@ class RegistrationForm extends StatelessWidget {
                     errorStyle: const TextStyle(
                         fontSize: 10, fontWeight: FontWeight.w400),
                     floatingLabelStyle:
-                        const TextStyle(color: Colors.blueAccent),
+                        const TextStyle(color: Color(0xff176B87)),
                     labelStyle: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w300),
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Colors.blueAccent,
+                      color: Color(0xff176B87),
                     ),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)),
@@ -137,10 +134,10 @@ class RegistrationForm extends StatelessWidget {
                         const BoxConstraints(maxHeight: 70, minHeight: 50),
                     isDense: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -161,14 +158,14 @@ class RegistrationForm extends StatelessWidget {
                 decoration: InputDecoration(
                     labelText: 'Re-type password',
                     floatingLabelStyle:
-                        const TextStyle(color: Colors.blueAccent),
+                        const TextStyle(color: Color(0xff176B87)),
                     errorStyle: const TextStyle(
                         fontSize: 10, fontWeight: FontWeight.w400),
                     labelStyle: const TextStyle(
                         fontSize: 15, fontWeight: FontWeight.w300),
                     prefixIcon: const Icon(
                       Icons.lock,
-                      color: Colors.blueAccent,
+                      color: Color(0xff176B87),
                     ),
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(15)),
@@ -178,10 +175,10 @@ class RegistrationForm extends StatelessWidget {
                         const BoxConstraints(maxHeight: 70, minHeight: 50),
                     isDense: true,
                     enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15)),
                     focusedBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.grey),
+                        borderSide: const BorderSide(color: Color(0xff176B87)),
                         borderRadius: BorderRadius.circular(15))),
                 validator: (value) {
                   if (value!.isEmpty) {
@@ -202,13 +199,12 @@ class RegistrationForm extends StatelessWidget {
                   const Text(
                     'Already have account?',
                     style: TextStyle(
-                        color: Colors.blueAccent,
+                        color: Color(0xff176B87),
                         fontSize: 16,
                         fontWeight: FontWeight.w300),
                   ),
                   TextButton(
                       onPressed: () {
-                 
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -218,7 +214,8 @@ class RegistrationForm extends StatelessWidget {
                       child: const Text(
                         'login',
                         style: TextStyle(
-                            color: Colors.blue, fontWeight: FontWeight.bold),
+                            color: Color(0xff176B87),
+                            fontWeight: FontWeight.bold),
                       ))
                 ],
               ),
@@ -236,7 +233,7 @@ class RegistrationForm extends StatelessWidget {
                       validateForm(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.blueAccent),
+                        backgroundColor: const Color(0xff176B87)),
                     child: const Text(
                       'Signup',
                       style: TextStyle(
@@ -257,18 +254,20 @@ class RegistrationForm extends StatelessWidget {
                   Container(
                     height: 1,
                     width: 120,
-                    color: Colors.black.withOpacity(0.1),
+                    color: const Color(0xff176B87).withOpacity(0.5),
                   ),
                   const Padding(
                     padding: EdgeInsets.symmetric(horizontal: 5),
                     child: Text(
                       'or',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: Color(0xff176B87)),
                     ),
                   ),
                   Container(
-                    color: Colors.black.withOpacity(0.1),
+                    color: const Color(0xff176B87).withOpacity(0.5),
                     height: 1,
                     width: 120,
                   )
@@ -282,7 +281,7 @@ class RegistrationForm extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                    print('Google sign in selsected...');
+                      print('Google sign in selsected...');
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -295,8 +294,7 @@ class RegistrationForm extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                     
-                     print('Facebook signin selected');
+                      print('Facebook signin selected');
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -320,9 +318,9 @@ class RegistrationForm extends StatelessWidget {
   //form validation function
   void validateForm(BuildContext context) {
     if (formKey.currentState!.validate()) {
-     print('Registration from is valid....');
+      print('Registration from is valid....');
     } else {
-   print('Registration form has issues to fix!');
+      print('Registration form has issues to fix!');
     }
   }
 }

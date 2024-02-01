@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: PageStorage(bucket: bucket, child: currentPage),
       bottomNavigationBar: BottomAppBar(
-          color: const Color(0xffEEF5FF),
+          
           height: 65,
           child: SizedBox(
             child: Row(
