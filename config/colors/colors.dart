@@ -11,5 +11,5 @@ class ConstantColors {
   static const Color paleBluecolorcolor = Color(0xffB4D4FF);
 
   //text color, buttons  &icons
-  static const Color darkBluecolor = Color(0xff176B87);
+  static const Color darkBluecolor = Color(0xff86B6f6);
 }

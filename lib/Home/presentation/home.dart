@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: PageStorage(bucket: bucket, child: currentPage),
       bottomNavigationBar: BottomAppBar(
-          
+          color: const Color(0xffB4D4FF),
           height: 65,
           child: SizedBox(
             child: Row(
@@ -52,14 +52,14 @@ class _HomePageState extends State<HomePage> {
                         size: 20,
                         color: currentIndepage == 0
                             ? const Color(0xff176B87)
-                            : const Color(0xffB4D4FF),
+                            : const Color(0xffEEF5FF),
                       ),
                       Text(
                         'Home',
                         style: TextStyle(
                             color: currentIndepage == 0
                                 ? const Color(0xff176B87)
-                                : const Color(0xffB4D4FF)),
+                                : const Color(0xffEEF5FF)),
                       )
                     ],
                   ),
@@ -75,18 +75,16 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Icon(
-                        Icons.settings,
-                        size: 20,
-                        color: currentIndepage == 1
-                            ? const Color(0xff176B87)
-                            : const Color(0xffB4D4FF),
-                      ),
+                      Icon(Icons.settings,
+                          size: 20,
+                          color: currentIndepage == 1
+                              ? const Color(0xff176B87)
+                              : const Color(0xffEEF5FF)),
                       Text('setting',
                           style: TextStyle(
                               color: currentIndepage == 1
                                   ? const Color(0xff176B87)
-                                  : const Color(0xffB4D4FF)))
+                                  : const Color(0xffEEF5FF)))
                     ],
                   ),
                 ),
@@ -105,12 +103,12 @@ class _HomePageState extends State<HomePage> {
                           size: 20,
                           color: currentIndepage == 2
                               ? const Color(0xff176B87)
-                              : const Color(0xffB4D4FF)),
+                              : const Color(0xffEEF5FF)),
                       Text('profile',
                           style: TextStyle(
                               color: currentIndepage == 2
                                   ? const Color(0xff176B87)
-                                  : const Color(0xffB4D4FF)))
+                                  : const Color(0xffEEF5FF)))
                     ],
                   ),
                 ),
