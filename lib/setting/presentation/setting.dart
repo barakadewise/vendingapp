@@ -4,7 +4,7 @@ class Settings extends StatefulWidget {
   const Settings({Key? key}) : super(key: key);
 
   @override
- State<Settings> createState() => _SettingsState();
+  State<Settings> createState() => _SettingsState();
 }
 
 class _SettingsState extends State<Settings> {
@@ -49,9 +49,9 @@ class _SettingsState extends State<Settings> {
               child: Text(
                 'Display Mode',
                 style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 18,
-                ),
+                    fontWeight: FontWeight.w500,
+                    fontSize: 18,
+                    color: Color(0xff176B87)),
               ),
             ),
             Padding(
@@ -61,21 +61,26 @@ class _SettingsState extends State<Settings> {
                 children: [
                   const Text(
                     'Dark Mode',
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontWeight: FontWeight.w300,
+                        color: Color(0xff176B87)),
                   ),
                   Switch(
+                   
+                    inactiveThumbColor: const Color(0xff86B6f6),
                     value: isDarkMode,
                     onChanged: (value) {
                       setState(() {
                         isDarkMode = value;
                       });
                     },
-                    activeColor: Colors.blue, // Customize color if needed
+                    activeColor:
+                        const Color(0xff176B87), // Customize color if needed
                   ),
                 ],
               ),
             ),
-            // Additional cool elements can be added here
           ],
         ),
       ),

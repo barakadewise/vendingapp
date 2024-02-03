@@ -55,7 +55,7 @@ class _LoginpageState extends State<Loginpage> {
                 height: 10,
               ),
               const Text(
-                'Feel fresh with our water!',
+                '👋 Hello welcome back',
                 style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w400,

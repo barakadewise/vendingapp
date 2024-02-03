@@ -63,13 +63,13 @@ class Profile extends StatelessWidget {
                         const SizedBox(
                           height: 10,
                         ),
-                        const ProfileTile(title: 'Username', value: 'John Doe'),
+                        const ProfileTile(title: 'Username', value: 'Group 7'),
                         const ProfileTile(
                             title: 'Account No', value: '1234567890'),
                         const ProfileTile(
-                            title: 'Phone Number', value: '+1234567890'),
+                            title: 'Phone Number', value: '+255763993194'),
                         const ProfileTile(
-                            title: 'Email', value: 'john@example.com'),
+                            title: 'Email', value: 'group7@example.com'),
                         const SizedBox(
                           height: 20,
                         ),

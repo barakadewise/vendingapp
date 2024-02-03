@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendingapp/Home/presentation/home.dart';
 import 'package:vendingapp/auth/presentation/signup.dart';
+import 'package:vendingapp/utils/snack.dart';
 
 class RegistrationForm extends StatelessWidget {
   final TextEditingController usernameController;
@@ -13,8 +14,6 @@ class RegistrationForm extends StatelessWidget {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final String emailRegex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
-
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -25,17 +24,18 @@ class RegistrationForm extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
+                keyboardType: TextInputType.phone,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
                 controller: usernameController,
                 decoration: InputDecoration(
-                  labelText: 'Username',
+                  labelText: 'Phone',
                   errorStyle: const TextStyle(
                       fontSize: 10, fontWeight: FontWeight.w400),
                   floatingLabelStyle: const TextStyle(color: Color(0xff176B87)),
                   labelStyle: const TextStyle(
                       fontSize: 15, fontWeight: FontWeight.w300),
                   prefixIcon: const Icon(
-                    Icons.email,
+                    Icons.phone,
                     color: Color(0xff176B87),
                   ),
                   border: OutlineInputBorder(
@@ -56,6 +56,10 @@ class RegistrationForm extends StatelessWidget {
                   if (value!.isEmpty) {
                     return "Username required";
                   }
+                  if (usernameController.text.length != 10) {
+                    return "Please use valid phone number";
+                  }
+
                   return null;
                 },
               ),
@@ -96,6 +100,9 @@ class RegistrationForm extends StatelessWidget {
                 validator: (value) {
                   if (value!.isEmpty) {
                     return "Password required";
+                  }
+                  if(passwordController.text.length<5){
+                    return 'Password is too short';
                   }
                   return null;
                 },
@@ -141,7 +148,7 @@ class RegistrationForm extends StatelessWidget {
                       validatForm(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff176B87)),
+                        backgroundColor: const Color(0xff176B87)),
                     child: const Text(
                       'Signin',
                       style: TextStyle(
@@ -157,11 +164,16 @@ class RegistrationForm extends StatelessWidget {
 
   //Form validation function
   void validatForm(BuildContext context) {
+    String message;
     if (formKey.currentState!.validate()) {
       Navigator.push(
           context, MaterialPageRoute(builder: (_) => const HomePage()));
+      message = 'Successfully logged!';
+      showSnack(context, message);
+      Navigator.of(context);
     } else {
-      print('Invalid formplease check the fields');
+      message = 'Oooops try again!';
+      showSnack(context, message);
     }
   }
 }
