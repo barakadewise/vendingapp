@@ -17,6 +17,12 @@ AppState appReDucer(AppState state, dynamic action) {
         authenticated: state.authenticated,
         reading: action.reading,
         user: state.user);
+  } else if (action is UpdateTransactionsAction) {
+    return AppState(
+        authenticated: state.authenticated,
+        reading: state.reading,
+        transactions: action.transactions,
+        user: state.user);
   }
 
   return state;

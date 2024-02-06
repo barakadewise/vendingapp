@@ -1,6 +1,10 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:vendingapp/Home/presentation/home.dart';
 import 'package:vendingapp/auth/presentation/signup.dart';
+import 'package:vendingapp/model/user.dart';
+import 'package:vendingapp/utils/api/api.dart';
 import 'package:vendingapp/utils/snack.dart';
 
 class RegistrationForm extends StatelessWidget {
@@ -101,7 +105,7 @@ class RegistrationForm extends StatelessWidget {
                   if (value!.isEmpty) {
                     return "Password required";
                   }
-                  if(passwordController.text.length<5){
+                  if (passwordController.text.length < 5) {
                     return 'Password is too short';
                   }
                   return null;
@@ -163,14 +167,28 @@ class RegistrationForm extends StatelessWidget {
   }
 
   //Form validation function
-  void validatForm(BuildContext context) {
+  void validatForm(BuildContext context) async {
     String message;
     if (formKey.currentState!.validate()) {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (_) => const HomePage()));
-      message = 'Successfully logged!';
+      var res = await CallApi().postRequest(
+          {'password': passwordController}, 'api/v1/auth/login',
+          context: context);
+      if (res != null) {
+        if (res.statusCode == 200) {
+          var body = json.decode(res.body);
+
+          User.login(context, body['token'], body['user']);
+
+          Navigator.push(
+              context, MaterialPageRoute(builder: (_) => const HomePage()));
+
+          message = 'Successfully logged!';
+          showSnack(context, message);
+        }
+      }
+      message = 'Oooops try again!';
       showSnack(context, message);
-      Navigator.of(context);
+      // Navigator.of(context);
     } else {
       message = 'Oooops try again!';
       showSnack(context, message);

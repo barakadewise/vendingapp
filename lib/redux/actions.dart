@@ -1,4 +1,5 @@
 import 'package:vendingapp/model/reading.dart';
+import 'package:vendingapp/model/transactions.dart';
 import 'package:vendingapp/model/user.dart';
 
 class UpdateAuthenticatedAction {
@@ -17,4 +18,10 @@ class UpdateReadingAction {
   final Reading? reading;
 
   UpdateReadingAction(this.reading);
+}
+
+class UpdateTransactionsAction {
+  final List<Transaction> transactions;
+
+  UpdateTransactionsAction(this.transactions);
 }
