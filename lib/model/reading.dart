@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:vendingapp/model/transactions.dart';
 import 'package:vendingapp/redux/actions.dart';
 import 'package:vendingapp/redux/app_state.dart';
 import 'package:vendingapp/utils/api/api.dart';
@@ -35,17 +36,26 @@ class Reading {
     if (user != null) {
       var userData = json.decode(user);
       final channel = IOWebSocketChannel.connect(
-          '${CallApi.socketURL}ws/user-data/${userData['id']}');
+          '${CallApi.socketURL}ws/user-data/${userData['account']['_id']}');
 
       channel.stream.listen((message) {
-        print(message);
-        var data = json.decode(message)['reading'];
+        var data = json.decode(message);
+        var account = data['account'];
         StoreProvider.of<AppState>(context)
             .dispatch(UpdateReadingAction(Reading(
-          data['total_volume'].toString(),
-          data['balance'].toString(),
+          account['consumed_litres'].toString(),
+          account['current_balance'].toString(),
         )));
-        // store.dispatch(WebSocketMessageReceivedAction(message));
+
+        var trans = data['trans'];
+        List<Transaction> transactions = [];
+        for (var tran in trans) {
+          transactions.add(Transaction(
+              tran['_id'], tran['amount'], tran['type'], tran['at']));
+        }
+
+        StoreProvider.of<AppState>(context)
+            .dispatch(UpdateTransactionsAction(transactions));
       });
     }
   }

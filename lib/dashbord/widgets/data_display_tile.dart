@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:vendingapp/model/transactions.dart';
 
 class DataDisplayTile extends StatefulWidget {
-  const DataDisplayTile({super.key});
+  final Transaction transaction;
+  const DataDisplayTile(this.transaction);
 
   @override
   State<DataDisplayTile> createState() => _DataDisplayTileState();
