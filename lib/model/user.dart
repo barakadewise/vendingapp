@@ -29,9 +29,9 @@ class User {
         .dispatch(UpdateAuthenticatedAction(true));
     StoreProvider.of<AppState>(context).dispatch(UpdateUserAction(User(
         user['_id'].toString(),
-        user['full_name'],
+        '${user['first_name']} ${user['last_name']}}',
         user['email'],
-        user['cellphone'])));
+        user['mobileNo'])));
     SharedPreferences localStorage = await SharedPreferences.getInstance();
 
     localStorage.setString('token', token);

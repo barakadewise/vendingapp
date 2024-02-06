@@ -48,14 +48,7 @@ class DisplayContainer extends StatelessWidget {
                     Expanded(
                         child: ListView(
                       scrollDirection: Axis.vertical,
-                      // children: const [
-                      //   DataDisplayTile(),
-                      //   DataDisplayTile(),
-                      //   DataDisplayTile(),
-                      //   DataDisplayTile(),
-                      //   DataDisplayTile(),
-                      //   DataDisplayTile()
-                      // ],
+                    
                       children: transactions
                           .map((transaction) => DataDisplayTile(transaction))
                           .toList(),

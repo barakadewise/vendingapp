@@ -6,8 +6,8 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class CallApi {
-  static const String url = 'http://127.0.0.1:7700/';
-  static const String socketURL = 'ws://127.0.0.1:7700/';
+  static const String url = 'http://64.23.165.180:7700/';
+  static const String socketURL = 'ws://64.23.165.180:7700/';
   // static const String mediaUrl = 'http://media.gnmcargo.com/';
 
   // static const String url = 'http://127.0.0.1:4100/';
@@ -31,6 +31,7 @@ class CallApi {
 
   http.Response evaluateResponseData(http.Response res, context,
       {login = false}) {
+        print(res);
     if (res.statusCode == 200) {
       return res;
     } else if (res.statusCode == 500) {
@@ -104,6 +105,7 @@ class CallApi {
   Future<http.Response?> postRequest(data, apiUrl,
       {BuildContext? context, login = false, evaluate = true}) async {
     var fullUrl = url + apiUrl;
+    print(fullUrl);
     try {
       var res = await http.post(
           Uri.parse(
@@ -119,6 +121,7 @@ class CallApi {
       }
       return res;
     } catch (e) {
+      print(e);
       // showSnack(context, AppLocalizations.of(context)!.no_netwrok);
       return null;
     }

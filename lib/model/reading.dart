@@ -36,10 +36,11 @@ class Reading {
     if (user != null) {
       var userData = json.decode(user);
       final channel = IOWebSocketChannel.connect(
-          '${CallApi.socketURL}ws/user-data/${userData['account']['_id']}');
+          '${CallApi.socketURL}ws/user-data/${userData['account']['accountNo']}');
 
       channel.stream.listen((message) {
         var data = json.decode(message);
+        print(data);
         var account = data['account'];
         StoreProvider.of<AppState>(context)
             .dispatch(UpdateReadingAction(Reading(

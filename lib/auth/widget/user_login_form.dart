@@ -7,7 +7,7 @@ import 'package:vendingapp/model/user.dart';
 import 'package:vendingapp/utils/api/api.dart';
 import 'package:vendingapp/utils/snack.dart';
 
-class RegistrationForm extends StatelessWidget {
+class RegistrationForm extends StatefulWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
 
@@ -16,7 +16,14 @@ class RegistrationForm extends StatelessWidget {
       required this.passwordController,
       super.key});
 
+  @override
+  State<RegistrationForm> createState() => _RegistrationFormState();
+}
+
+class _RegistrationFormState extends State<RegistrationForm> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  bool _isloading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +37,7 @@ class RegistrationForm extends StatelessWidget {
               child: TextFormField(
                 keyboardType: TextInputType.phone,
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: usernameController,
+                controller: widget.usernameController,
                 decoration: InputDecoration(
                   labelText: 'Phone',
                   errorStyle: const TextStyle(
@@ -60,7 +67,7 @@ class RegistrationForm extends StatelessWidget {
                   if (value!.isEmpty) {
                     return "Username required";
                   }
-                  if (usernameController.text.length != 10) {
+                  if (widget.usernameController.text.length != 10) {
                     return "Please use valid phone number";
                   }
 
@@ -75,7 +82,7 @@ class RegistrationForm extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: TextFormField(
                 autovalidateMode: AutovalidateMode.onUserInteraction,
-                controller: passwordController,
+                controller: widget.passwordController,
                 decoration: InputDecoration(
                   labelText: 'Password',
                   errorStyle: const TextStyle(
@@ -105,7 +112,7 @@ class RegistrationForm extends StatelessWidget {
                   if (value!.isEmpty) {
                     return "Password required";
                   }
-                  if (passwordController.text.length < 5) {
+                  if (widget.passwordController.text.length < 5) {
                     return 'Password is too short';
                   }
                   return null;
@@ -153,14 +160,18 @@ class RegistrationForm extends StatelessWidget {
                       validatForm(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xff176B87)),
-                    child: const Text(
-                      'Signin',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500),
-                    ),
+                        backgroundColor: Color(0xff176B87)),
+                    child: _isloading
+                        ? CircularProgressIndicator(
+                            color: Colors.white,
+                          )
+                        : const Text(
+                            'Signin',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500),
+                          ),
                   )),
             ),
           ],
@@ -171,12 +182,21 @@ class RegistrationForm extends StatelessWidget {
   void validatForm(BuildContext context) async {
     String message;
     if (formKey.currentState!.validate()) {
-      var res = await CallApi().postRequest(
-          {'password': passwordController}, 'api/v1/auth/login',
-          context: context);
+      var payload = {
+        'password': widget.passwordController.text,
+        'username': widget.usernameController.text
+      };
+      print(payload);
+      setState(() {
+        _isloading = true;
+      });
+      var res = await CallApi()
+          .postRequest(payload, 'api/v1/auth/login', context: context);
+      print(res);
       if (res != null) {
         if (res.statusCode == 200) {
           var body = json.decode(res.body);
+          print(body);
 
           User.login(context, body['token'], body['user']);
 
@@ -185,6 +205,7 @@ class RegistrationForm extends StatelessWidget {
 
           message = 'Successfully logged!';
           showSnack(context, message);
+          return;
         }
       }
       message = 'Oooops try again!';

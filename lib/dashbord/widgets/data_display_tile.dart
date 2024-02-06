@@ -36,31 +36,34 @@ class _DataDisplayTileState extends State<DataDisplayTile> {
                   ),
                 ),
               ),
-              const Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Volume',
+                    widget.transaction.type,
                     style: TextStyle(
                         fontWeight: FontWeight.w400, color: Color(0xff176B87)),
                   ),
-                  Text(
-                    '2L',
-                    style: TextStyle(
-                        fontWeight: FontWeight.w400, color: Color(0xff176B87)),
-                  )
+                  // Visibility(
+                  //   visible: widget.transaction.type == 'Purchase',
+                  //   child: Text(
+                  //     '2L',
+                  //     style: TextStyle(
+                  //         fontWeight: FontWeight.w400, color: Color(0xff176B87)),
+                  //   ),
+                  // )
                 ],
               ),
-              const Column(
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'Price',
+                  const Text(
+                    'Amount',
                     style: TextStyle(
                         fontWeight: FontWeight.w600, color: Color(0xff176B87)),
                   ),
                   Text(
-                    '1000',
+                    widget.transaction.amount,
                     style: TextStyle(color: Color(0xff176B87)),
                   )
                 ],

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:vendingapp/Profile/presentation/profile.dart';
 import 'package:vendingapp/dashbord/presentation/dashboard.dart';
+import 'package:vendingapp/model/reading.dart';
 import 'package:vendingapp/setting/presentation/setting.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,14 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    Reading.readingWebSocket(context);
+
+    super.initState();
+  }
   //pages list
   final List<Widget> pageList = [
     const Dashboard(),

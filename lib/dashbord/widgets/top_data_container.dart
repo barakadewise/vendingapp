@@ -8,8 +8,8 @@ class TopDataContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<AppState, Reading>(
-        converter: (store) => store.state.reading!,
+    return StoreConnector<AppState, Reading?>(
+        converter: (store) => store.state.reading,
         builder: (context, reading) {
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
@@ -19,14 +19,14 @@ class TopDataContainer extends StatelessWidget {
                 Column(
                   children: [
                     const Text(
-                      'Total',
+                      'Consumed',
                       style: TextStyle(
-                          fontSize: 20,
+                          fontSize: 18,
                           fontWeight: FontWeight.w500,
                           color: Color(0xff176B87)),
                     ),
                     Text(
-                      '${reading.totalVolume.toString()} L',
+                      '${reading != null ? reading.totalVolume.toString() : 0} L',
                       style: const TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.w300,
@@ -37,16 +37,16 @@ class TopDataContainer extends StatelessWidget {
                 Image.asset(
                   'assets/img/drop1.png',
                   height: 150,
-                  width: 200,
+                  width: 120,
                 ),
-                const Column(
+                 Column(
                   children: [
-                    Text('Price',
+                   const Text('Balance',
                         style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: Color(0xff176B87))),
-                    Text('20,000',
+                    Text(reading != null ? reading.balance.toString() : '0',
                         style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w300,
