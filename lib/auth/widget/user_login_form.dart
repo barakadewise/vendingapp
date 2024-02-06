@@ -122,6 +122,7 @@ class RegistrationForm extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
+                        Navigator.pop(context);
                         Navigator.push(
                             context,
                             MaterialPageRoute(

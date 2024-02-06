@@ -14,8 +14,6 @@ class _LoginpageState extends State<Loginpage> {
 
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
-  final String emailRegex = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$';
-
   @override
   void dispose() {
     usernameController.dispose();
