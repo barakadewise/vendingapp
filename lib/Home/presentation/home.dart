@@ -17,9 +17,9 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     Reading.readingWebSocket(context);
-
     super.initState();
   }
+  
   //pages list
   final List<Widget> pageList = [
     const Dashboard(),

@@ -31,7 +31,7 @@ class CallApi {
 
   http.Response evaluateResponseData(http.Response res, context,
       {login = false}) {
-        print(res);
+        
     if (res.statusCode == 200) {
       return res;
     } else if (res.statusCode == 500) {
@@ -39,7 +39,7 @@ class CallApi {
       // showSnack(context, AppLocalizations.of(context)!.unauthorized);
       return res;
     } else if (res.statusCode == 400) {
-      //--- Push to a page with 500 status, and code for troubleshoot
+      //--- Push to a page with 400 status, and code for troubleshoot
       // scafold(context, 'Record Not Found');
       showSnack(context, 'Invalid request arguments');
       return res;

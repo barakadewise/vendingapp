@@ -12,35 +12,6 @@ class Dashboard extends StatefulWidget {
 
 //Poup bool variable
 bool _isPopupOpen = false;
-//function to toglle the popup
-Widget _togglePopUp(BuildContext context) {
-  if (_isPopupOpen) {
-    return Container(
-        margin: const EdgeInsets.symmetric(horizontal: 20),
-        padding: const EdgeInsets.all(10),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(10),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(0, 2), // changes position of shadow
-            ),
-          ],
-        ),
-        child: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Option 1'),
-            Text('Option 2'),
-            Text('Option 3'),
-          ],
-        ));
-  }
-  return const SizedBox.shrink();
-}
 
 class _DashboardState extends State<Dashboard> {
   @override

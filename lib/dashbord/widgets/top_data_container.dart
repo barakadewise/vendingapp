@@ -47,7 +47,7 @@ class TopDataContainer extends StatelessWidget {
                             fontWeight: FontWeight.w500,
                             color: Color(0xff176B87))),
                     Text(reading != null ? reading.balance.toString() : '0',
-                        style: TextStyle(
+                        style:  const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w300,
                             color: Color(0xff176B87))),
