@@ -319,7 +319,7 @@ class RegistrationForm extends StatelessWidget {
   void validateForm(BuildContext context) {
     if (formKey.currentState!.validate()) {
       print('Registration from is valid....');
-      Navigator.push(context, MaterialPageRoute(builder: (_)=>Loginpage()));
+      Navigator.push(context, MaterialPageRoute(builder: (_)=>const Loginpage()));
       Navigator.pop(context);
     } else {
       print('Registration form has issues to fix!');

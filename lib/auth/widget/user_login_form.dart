@@ -11,7 +11,7 @@ class RegistrationForm extends StatefulWidget {
   final TextEditingController usernameController;
   final TextEditingController passwordController;
 
-  RegistrationForm(
+  const RegistrationForm(
       {required this.usernameController,
       required this.passwordController,
       super.key});
@@ -67,7 +67,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   if (value!.isEmpty) {
                     return "Username required";
                   }
-                  if (widget.usernameController.text.length != 10) {
+                  if (widget.usernameController.text.length!= 10) {
                     return "Please use valid phone number";
                   }
 
@@ -112,7 +112,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   if (value!.isEmpty) {
                     return "Password required";
                   }
-                  if (widget.passwordController.text.length < 5) {
+                  if (widget.passwordController.text.length<5) {
                     return 'Password is too short';
                   }
                   return null;
@@ -160,9 +160,9 @@ class _RegistrationFormState extends State<RegistrationForm> {
                       validatForm(context);
                     },
                     style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff176B87)),
+                        backgroundColor: const Color(0xff176B87)),
                     child: _isloading
-                        ? CircularProgressIndicator(
+                        ? const CircularProgressIndicator(
                             color: Colors.white,
                           )
                         : const Text(
@@ -197,9 +197,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
         if (res.statusCode == 200) {
           var body = json.decode(res.body);
           print(body);
-
           User.login(context, body['token'], body['user']);
-
           Navigator.push(
               context, MaterialPageRoute(builder: (_) => const HomePage()));
 

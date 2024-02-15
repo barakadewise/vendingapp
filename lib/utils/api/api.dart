@@ -31,7 +31,6 @@ class CallApi {
 
   http.Response evaluateResponseData(http.Response res, context,
       {login = false}) {
-        
     if (res.statusCode == 200) {
       return res;
     } else if (res.statusCode == 500) {

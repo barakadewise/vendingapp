@@ -3,7 +3,7 @@ import 'package:vendingapp/model/transactions.dart';
 
 class DataDisplayTile extends StatefulWidget {
   final Transaction transaction;
-  const DataDisplayTile(this.transaction);
+  const DataDisplayTile(this.transaction, {super.key});
 
   @override
   State<DataDisplayTile> createState() => _DataDisplayTileState();
@@ -41,17 +41,9 @@ class _DataDisplayTileState extends State<DataDisplayTile> {
                 children: [
                   Text(
                     widget.transaction.type,
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontWeight: FontWeight.w400, color: Color(0xff176B87)),
                   ),
-                  // Visibility(
-                  //   visible: widget.transaction.type == 'Purchase',
-                  //   child: Text(
-                  //     '2L',
-                  //     style: TextStyle(
-                  //         fontWeight: FontWeight.w400, color: Color(0xff176B87)),
-                  //   ),
-                  // )
                 ],
               ),
                Column(
@@ -64,7 +56,7 @@ class _DataDisplayTileState extends State<DataDisplayTile> {
                   ),
                   Text(
                     widget.transaction.amount,
-                    style: TextStyle(color: Color(0xff176B87)),
+                    style: const TextStyle(color: Color(0xff176B87)),
                   )
                 ],
               )

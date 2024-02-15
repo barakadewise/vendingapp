@@ -10,8 +10,6 @@ class Dashboard extends StatefulWidget {
   State<Dashboard> createState() => _DashboardState();
 }
 
-//Poup bool variable
-bool _isPopupOpen = false;
 
 class _DashboardState extends State<Dashboard> {
   @override
